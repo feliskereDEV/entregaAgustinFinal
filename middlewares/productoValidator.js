@@ -1,9 +1,9 @@
-// Middleware validador para productos
+
 
 const validarProducto = (req, res, next) => {
     const producto = req.body;
 
-    // 1. Verificar Campos Requeridos
+
     const camposRequeridos = ['nombreProducto', 'marca', 'stock', 'tipo', 'precio', 'caracteristicas', 'modelo', 'color', 'habilitado'];
     const camposFaltantes = camposRequeridos.filter(campo => producto[campo] === undefined);
 
@@ -14,7 +14,6 @@ const validarProducto = (req, res, next) => {
         });
     }
 
-    // 2. Verificar Tipos de Datos
     if (typeof producto.nombreProducto !== 'string' || typeof producto.marca !== 'string') {
         return res.status(400).json({ error: 'Tipo de dato incorrecto', mensaje: 'Nombre y Marca deben ser strings.' });
     }
@@ -27,7 +26,7 @@ const validarProducto = (req, res, next) => {
         return res.status(400).json({ error: 'Tipo de dato incorrecto', mensaje: 'Habilitado debe ser un valor booleano (true/false).' });
     }
 
-    // Si todas las verificaciones pasan, pasa al Controlador
+  
     next(); 
 };
 
