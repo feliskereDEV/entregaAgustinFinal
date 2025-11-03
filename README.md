@@ -98,6 +98,144 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
 
 - Filtrar por números (igualdad exacta):
   - GET /api/productos?stock=10
+
+## Ejemplos de Respuestas
+
+### GET /api/productos
+```json
+{
+    "success": true,
+    "message": "Productos obtenidos correctamente",
+    "data": [
+        {
+            "id": "1",
+            "nombreProducto": "TV Smart",
+            "marca": "VisionMax",
+            "stock": 5,
+            "tipo": "Electrodoméstico",
+            "precio": 699.99,
+            "caracteristicas": "4K, HDR",
+            "modelo": "VM-55X",
+            "color": "Negro",
+            "habilitado": true
+        },
+        {
+            "id": "2",
+            "nombreProducto": "Lavadora",
+            "marca": "Samsung",
+            "stock": 10,
+            "tipo": "Electrodoméstico",
+            "precio": 599.99,
+            "caracteristicas": "Smart, 15kg",
+            "modelo": "WF45T6000AW",
+            "color": "Blanco",
+            "habilitado": true
+        }
+    ]
+}
+```
+
+### GET /api/productos/:id
+```json
+{
+    "success": true,
+    "message": "Producto encontrado correctamente",
+    "data": {
+        "id": "1",
+        "nombreProducto": "TV Smart",
+        "marca": "VisionMax",
+        "stock": 5,
+        "tipo": "Electrodoméstico",
+        "precio": 699.99,
+        "caracteristicas": "4K, HDR",
+        "modelo": "VM-55X",
+        "color": "Negro",
+        "habilitado": true
+    }
+}
+```
+
+### POST /api/productos
+```json
+{
+    "success": true,
+    "message": "Producto creado correctamente",
+    "data": {
+        "id": "3",
+        "nombreProducto": "Lavadora",
+        "marca": "Samsung",
+        "stock": 10,
+        "tipo": "Electrodoméstico",
+        "precio": 599.99,
+        "caracteristicas": "Smart, 15kg",
+        "modelo": "WF45T6000AW",
+        "color": "Blanco",
+        "habilitado": true
+    }
+}
+```
+
+### PUT/PATCH /api/productos/:id
+```json
+{
+    "success": true,
+    "message": "Producto actualizado correctamente",
+    "data": {
+        "id": "1",
+        "nombreProducto": "TV Smart",
+        "marca": "VisionMax",
+        "stock": 8,
+        "tipo": "Electrodoméstico",
+        "precio": 799.99,
+        "caracteristicas": "4K, HDR, Smart TV",
+        "modelo": "VM-55X",
+        "color": "Negro",
+        "habilitado": true
+    }
+}
+```
+
+### DELETE /api/productos/:id
+```json
+{
+    "success": true,
+    "message": "Producto eliminado correctamente",
+    "data": {
+        "id": "1",
+        "nombreProducto": "TV Smart",
+        "marca": "VisionMax",
+        "stock": 8,
+        "tipo": "Electrodoméstico",
+        "precio": 799.99,
+        "caracteristicas": "4K, HDR, Smart TV",
+        "modelo": "VM-55X",
+        "color": "Negro",
+        "habilitado": true
+    }
+}
+```
+
+### Ejemplo de Error (ID no encontrado)
+```json
+{
+    "success": false,
+    "message": "No se encontró el producto con el ID especificado",
+    "error": "NOT_FOUND"
+}
+```
+
+### Ejemplo de Error (Validación)
+```json
+{
+    "success": false,
+    "message": "Error de validación",
+    "error": "VALIDATION_ERROR",
+    "details": [
+        "El campo 'nombreProducto' es requerido",
+        "El campo 'precio' debe ser un número positivo"
+    ]
+}
+```
   - GET /api/productos?precio=699.99
 
 Comportamiento:
