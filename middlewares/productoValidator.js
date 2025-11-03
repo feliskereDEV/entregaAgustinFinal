@@ -1,8 +1,16 @@
 
 
 const validarProducto = (req, res, next) => {
+    console.log('Body recibido:', req.body);
     const producto = req.body;
 
+    if (!producto) {
+        return res.status(400).json({
+            success: false,
+            error: 'VALIDATION_ERROR',
+            message: 'No se recibió el body de la petición'
+        });
+    }
 
     const camposRequeridos = ['nombreProducto', 'marca', 'stock', 'tipo', 'precio', 'caracteristicas', 'modelo', 'color', 'habilitado'];
     const camposFaltantes = camposRequeridos.filter(campo => producto[campo] === undefined);
@@ -30,4 +38,5 @@ const validarProducto = (req, res, next) => {
     next(); 
 };
 
+module.exports = validarProducto;
 module.exports = validarProducto;

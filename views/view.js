@@ -27,8 +27,9 @@ router.post('/', validarProducto, ProductoController.crear);
 //* Aplicamos el middleware 'validarProducto' antes de llamar al controlador 'actualizar'.
 router.put('/:id', validarProducto, ProductoController.actualizar);
 
-//* También soportamos PATCH para actualizaciones parciales
-router.patch('/:id', validarProducto, ProductoController.actualizar);
+//* ACTUALIZAR PARCIAL: PATCH /api/productos/:id
+//* No necesitamos validar todos los campos en una actualización parcial
+router.patch('/:id', ProductoController.actualizarParcial);
 
 
 //*DELETE /api/productos/:id

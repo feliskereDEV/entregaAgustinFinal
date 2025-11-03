@@ -238,5 +238,17 @@
     "tipo": "habitacion",
     "id": 20,
     "precio": 0
+  },
+  {
+    "id": 21,
+    "nombreProducto": "test modificado",
+    "caracteristicas": "test modificado",
+    "modelo": "testooo",
+    "color": "test modificado",
+    "marca": "test modificado",
+    "stock": 20,
+    "precio": 1499.99,
+    "habilitado": true,
+    "tipo": "test modificado"
   }
 ]

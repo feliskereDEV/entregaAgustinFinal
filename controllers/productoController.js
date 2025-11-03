@@ -1,22 +1,22 @@
 const ProductoModel = require('../models/productoModel');
 
-// Función auxiliar para verificar si un objeto está vacío
+//*Función auxiliar para verificar si un objeto está vacío
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 
 const productoController = {
-    // Obtener todos los productos
+    //* Obtener todos los productos
     obtenerTodos: (req, res) => {
         try {
             let productos = ProductoModel.obtenerTodos();
             const filtros = req.query;
 
-            // Si hay parámetros de consulta, aplicar filtros
+            //* Si hay parámetros de consulta, aplicar filtros
             if (!isEmpty(filtros)) {
                 productos = productos.filter(producto => {
                     return Object.keys(filtros).every(key => {
-                        // Convertir tanto el valor del producto como el filtro a minúsculas para comparación
+                        //* Convertir tanto el valor del producto como el filtro a minúsculas para comparación
                         const valorProducto = String(producto[key]).toLowerCase();
                         const valorFiltro = String(filtros[key]).toLowerCase();
                         return valorProducto.includes(valorFiltro);
@@ -31,7 +31,7 @@ const productoController = {
         }
     },
 
-    // Obtener un producto por ID
+    //* Obtener un producto por ID
     obtenerPorId: (req, res) => {
         try {
             const producto = ProductoModel.obtenerPorId(req.params.id);
@@ -47,7 +47,7 @@ const productoController = {
         }
     },
 
-    // Crear un nuevo producto
+    //* Crear un nuevo producto
     crear: (req, res) => {
         try {
             const nuevoProducto = ProductoModel.crear(req.body);
@@ -58,7 +58,7 @@ const productoController = {
         }
     },
 
-    // Actualizar un producto completamente
+    //* Actualizar un producto completamente
     actualizar: (req, res) => {
         try {
             const productoActualizado = ProductoModel.actualizar(req.params.id, req.body);
@@ -74,7 +74,7 @@ const productoController = {
         }
     },
 
-    // Actualizar un producto parcialmente
+    //* Actualizar un producto parcialmente
     actualizarParcial: (req, res) => {
         try {
             // Primero obtenemos el producto existente
