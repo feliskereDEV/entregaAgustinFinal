@@ -55,8 +55,8 @@ Por defecto el servidor arranca en el puerto `3000` y monta el router de product
 
 - Crear un producto
   - POST /api/productos
-  - Body (application/json):
-
+  - Body -> raw -> application/json:
+  - Tiene que tener SI O SI los siguientes campos. (obligatorios y validados)
 ```json
 {
   "nombreProducto": "Lavadora",
