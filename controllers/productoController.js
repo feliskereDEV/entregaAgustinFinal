@@ -100,12 +100,19 @@ const productoController = {
     // Eliminar un producto
     eliminar: (req, res) => {
         try {
+            // obtener el producto antes de eliminar para devolverlo
+            const productoExistente = ProductoModel.obtenerPorId(req.params.id);
+            if (!productoExistente) {
+                return res.status(404).json({ success: false, error: "Producto no encontrado" });
+            }
+
             const eliminado = ProductoModel.eliminar(req.params.id);
-            
+
             if (eliminado) {
-                res.status(204).send();
+                // eliminado es el objeto eliminado retornado por el modelo
+                return res.json(eliminado);
             } else {
-                res.status(404).json({ error: "Producto no encontrado" });
+                return res.status(500).json({ error: 'No se pudo eliminar el producto' });
             }
         } catch (error) {
             console.error("Error al eliminar el producto:", error);

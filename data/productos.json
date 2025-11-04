@@ -60,18 +60,6 @@
     "precio": 0
   },
   {
-    "nombreProducto": "Barra de Sonido 5.1 con Subwoofer Inalámbrico",
-    "caracteristicas": "Conexión Bluetooth y HDMI ARC, Dolby Atmos, 510W de potencia",
-    "modelo": "SB-510W",
-    "color": "Negro Mate",
-    "marca": "AudioPro",
-    "stock": 12,
-    "habilitado": true,
-    "tipo": "living",
-    "id": 6,
-    "precio": 0
-  },
-  {
     "nombreProducto": "Freezer Vertical No Frost",
     "caracteristicas": "Sistema de congelamiento rápido, 6 cajones, bajo nivel de ruido",
     "modelo": "FV-280NF",
@@ -105,42 +93,6 @@
     "habilitado": true,
     "tipo": "living",
     "id": 9,
-    "precio": 0
-  },
-  {
-    "nombreProducto": "Horno Eléctrico Empotrable 70L",
-    "caracteristicas": "10 funciones de cocción, autolimpieza pirolítica, panel touch",
-    "modelo": "HE-70PIRO",
-    "color": "Negro",
-    "marca": "FastHeat",
-    "stock": 9,
-    "habilitado": false,
-    "tipo": "cocina",
-    "id": 10,
-    "precio": 0
-  },
-  {
-    "nombreProducto": "Aspiradora Robot con Función de Trapeado",
-    "caracteristicas": "Navegación láser, barrido y trapeado simultáneo, batería de larga duración",
-    "modelo": "AR-4000L",
-    "color": "Blanco",
-    "marca": "CleanBot",
-    "stock": 16,
-    "habilitado": true,
-    "tipo": "habitacion",
-    "id": 11,
-    "precio": 0
-  },
-  {
-    "nombreProducto": "Home Theater 7.2 Canales",
-    "caracteristicas": "Decodificación Dolby TrueHD y DTS-HD Master Audio, 1000W",
-    "modelo": "HT-72THD",
-    "color": "Negro Mate",
-    "marca": "AudioPro",
-    "stock": 7,
-    "habilitado": true,
-    "tipo": "living",
-    "id": 12,
     "precio": 0
   },
   {
@@ -204,18 +156,6 @@
     "precio": 0
   },
   {
-    "nombreProducto": "Reproductor Multimedia Streaming 4K",
-    "caracteristicas": "Compatible con Dolby Vision y HDR10+, control remoto por voz",
-    "modelo": "RMS-4KPRO",
-    "color": "Negro",
-    "marca": "TechLiving",
-    "stock": 30,
-    "habilitado": true,
-    "tipo": "living",
-    "id": 18,
-    "precio": 0
-  },
-  {
     "nombreProducto": "Pava Eléctrica con Control de Temperatura",
     "caracteristicas": "Capacidad de 1.7L, 5 niveles de temperatura preestablecidos, apagado automático",
     "modelo": "PE-17TEMP",
@@ -226,29 +166,5 @@
     "tipo": "cocina",
     "id": 19,
     "precio": 0
-  },
-  {
-    "nombreProducto": "Ventilador de Techo Inteligente",
-    "caracteristicas": "Control por Wi-Fi, 6 velocidades, luz LED regulable",
-    "modelo": "VTI-LED6",
-    "color": "Madera Clara",
-    "marca": "AeroFlow",
-    "stock": 14,
-    "habilitado": true,
-    "tipo": "habitacion",
-    "id": 20,
-    "precio": 0
-  },
-  {
-    "id": 21,
-    "nombreProducto": "test modificado",
-    "caracteristicas": "test modificado",
-    "modelo": "testooo",
-    "color": "test modificado",
-    "marca": "test modificado",
-    "stock": 20,
-    "precio": 1499.99,
-    "habilitado": true,
-    "tipo": "test modificado"
   }
 ]

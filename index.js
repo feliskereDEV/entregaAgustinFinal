@@ -12,6 +12,29 @@ app.use(express.json());
 //* Importamos las rutas del módulo de productos
 const productoRoutes = require('./views/view');
 
+//* Middleware de logging: guarda cada petición en logger.log
+const fs = require('fs');
+const path = require('path');
+const LOG_PATH = path.join(__dirname, 'logger.log');
+app.use((req, res, next) => {
+    try {
+        const timestamp = new Date().toISOString();
+        const entry = {
+            timestamp,
+            method: req.method,
+            url: req.originalUrl,
+            contentType: req.get('Content-Type') || '',
+            body: req.body
+        };
+        fs.appendFile(LOG_PATH, JSON.stringify(entry) + '\n', (err) => {
+            if (err) console.error('Error escribiendo en logger.log:', err.message);
+        });
+    } catch (e) {
+        console.error('Error en middleware de logging:', e.message);
+    }
+    next();
+});
+
 //* Montar las rutas de productos
 app.use('/api/productos', productoRoutes);
 

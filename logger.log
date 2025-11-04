@@ -1,0 +1,10 @@
+{"timestamp":"2025-11-04T19:19:37.902Z","method":"GET","url":"/api/productos/","contentType":""}
+{"timestamp":"2025-11-04T19:22:25.546Z","method":"DELETE","url":"/api/productos/18","contentType":""}
+{"timestamp":"2025-11-04T19:25:02.552Z","method":"GET","url":"/api/productos/","contentType":""}
+{"timestamp":"2025-11-04T19:25:07.225Z","method":"GET","url":"/api/productos/5","contentType":""}
+{"timestamp":"2025-11-04T19:26:04.376Z","method":"DELETE","url":"/api/productos/6","contentType":""}
+{"timestamp":"2025-11-04T19:26:29.171Z","method":"GET","url":"/api/productos/","contentType":""}
+{"timestamp":"2025-11-04T19:26:57.312Z","method":"GET","url":"/api/productos/","contentType":""}
+{"timestamp":"2025-11-04T19:27:08.220Z","method":"DELETE","url":"/api/productos/10","contentType":""}
+{"timestamp":"2025-11-04T19:28:59.118Z","method":"DELETE","url":"/api/productos/11","contentType":""}
+{"timestamp":"2025-11-04T20:02:40.483Z","method":"DELETE","url":"/api/productos/12","contentType":""}

@@ -88,16 +88,20 @@ class ProductoModel {
         const productoId = parseInt(id, 10);
         const longitudInicial = productos.length;
         
+        //* Buscar el producto que será eliminado
+        const productoEliminado = productos.find(p => p.id === productoId) || null;
+
         //* Crea un nuevo array sin el producto que va a ser eliminado
         const productosFiltrados = productos.filter(p => p.id !== productoId);
-        
+
         //* Si la longitud cambió, significa que se eliminó algo
         if (productosFiltrados.length !== longitudInicial) {
-            escribirDatos(productosFiltrados); 
-            return true;
+            escribirDatos(productosFiltrados);
+            // Devolver el objeto eliminado para que el controlador pueda responder con JSON
+            return productoEliminado;
         }
-        
-        return false; //* No se encontro el ID
+
+        return null; //* No se encontro el ID
     }
 }
 
