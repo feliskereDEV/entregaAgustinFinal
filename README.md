@@ -73,12 +73,12 @@ Por defecto el servidor arranca en el puerto `3000` y monta el router de product
 
 - Actualizar un producto
   - PUT /api/productos/:id
-  - Body: campos a actualizar (no incluir `id`)
+  - Forma de mandar el JSON: Body -> raw -> json (no incluir `id`)
 
 - Actualizar parcialmente un producto (PATCH)
   - PATCH /api/productos/:id
-  - Body: solo los campos a modificar (no incluir `id`)
-  - Nota: el proyecto soporta PATCH para actualizaciones parciales y PUT para reemplazo/parcial según cómo uses el endpoint.
+  - Forma de mandar el JSON: Body -> raw -> json (no incluir `id`)
+  
 
 - Eliminar un producto
   - DELETE /api/productos/:id
@@ -104,9 +104,7 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
 ### GET /api/productos
 ```json
 {
-    "success": true,
-    "message": "Productos obtenidos correctamente",
-    "data": [
+    
         {
             "id": "1",
             "nombreProducto": "TV Smart",
@@ -131,16 +129,14 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
             "color": "Blanco",
             "habilitado": true
         }
-    ]
+    
 }
 ```
 
 ### GET /api/productos/:id
 ```json
 {
-    "success": true,
-    "message": "Producto encontrado correctamente",
-    "data": {
+    
         "id": "1",
         "nombreProducto": "TV Smart",
         "marca": "VisionMax",
@@ -151,16 +147,14 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
         "modelo": "VM-55X",
         "color": "Negro",
         "habilitado": true
-    }
+    
 }
 ```
 
 ### POST /api/productos
 ```json
 {
-    "success": true,
-    "message": "Producto creado correctamente",
-    "data": {
+    
         "id": "3",
         "nombreProducto": "Lavadora",
         "marca": "Samsung",
@@ -171,16 +165,14 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
         "modelo": "WF45T6000AW",
         "color": "Blanco",
         "habilitado": true
-    }
+    
 }
 ```
 
 ### PUT/PATCH /api/productos/:id
 ```json
 {
-    "success": true,
-    "message": "Producto actualizado correctamente",
-    "data": {
+    
         "id": "1",
         "nombreProducto": "TV Smart",
         "marca": "VisionMax",
@@ -191,16 +183,14 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
         "modelo": "VM-55X",
         "color": "Negro",
         "habilitado": true
-    }
+    
 }
 ```
 
 ### DELETE /api/productos/:id
 ```json
 {
-    "success": true,
-    "message": "Producto eliminado correctamente",
-    "data": {
+   
         "id": "1",
         "nombreProducto": "TV Smart",
         "marca": "VisionMax",
@@ -211,14 +201,14 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
         "modelo": "VM-55X",
         "color": "Negro",
         "habilitado": true
-    }
+    
 }
 ```
 
 ### Ejemplo de Error (ID no encontrado)
 ```json
 {
-    "success": false,
+    
     "message": "No se encontró el producto con el ID especificado",
     "error": "NOT_FOUND"
 }
@@ -227,8 +217,7 @@ El endpoint `GET /api/productos` soporta filtros mediante query params. Ejemplos
 ### Ejemplo de Error (Validación)
 ```json
 {
-    "success": false,
-    "message": "Error de validación",
+    
     "error": "VALIDATION_ERROR",
     "details": [
         "El campo 'nombreProducto' es requerido",
